@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<meta charset="UTF-8"/>
+		<meta charset="ISO-8859"/>
+
+	</head>
+	<body>
+
+		<p id="startMesseage">Naciśnij "generuj" aby wygenerować liczbę z przedziału 0-9</p>
+		<input type="text" id="number" onBlur="isInteger(this)" disabled />
+		<button id="check" disabled>sprawdz</button>
+		<button id="generate" onClick="start()">generuj</button>
+		<p id="result"></p>
+	
+	<script>
+
+	const checkButton = document.querySelector('#check')
+	const generateButton = document.querySelector('#generate')
+	const textArea = document.querySelector('#number')
+	const firstMesseage = document.querySelector('#startMesseage')	
+	var resultGame = document.querySelector('#result')
+	var randomNumber = 0
+	var counterClicks = 0
+	
+		function start(){
+				resultGame.innerHTML = ""
+				firstMesseage.innerHTML = "Podaj liczbę:"
+				textArea.disabled = false
+				checkButton.disabled = false
+				generateButton.disabled = true
+			
+				console.log(randomNumber=Math.floor((Math.random()*10))) 
+	}
+
+		function isInteger(number){
+			//console.log(Number.isInteger(number.value))
+		
+		const pattern = /^[0-9]{1}$/
+
+			if(!number.value.match(pattern)){
+				alert("niepoprawny numer podaj właściwy: ")
+			
+			}else{
+				game(number)
+			}
+
+			counterClicks+=1
+			console.log(counterClicks)
+
+		}
+
+		function game(enteredNumber){
+
+			const congratsMesseage = "zgadłes, gratulacje!"
+			const messeage = "Nie zgadłes,próbuj dalej"
+
+			if((enteredNumber.value==(randomNumber))===false){
+					
+					resultGame.innerHTML = messeage.fontcolor("red")
+	
+				}else{
+					resultGame.innerHTML = congratsMesseage.fontcolor("green")
+					endGame()
+				}
+
+				limitTry()
+		}
+
+		function limitTry(){
+			if(counterClicks>=3){
+					const endMesseage = "niestety nie udało się! Przekroczyles limit prób. Wcisnij generuj by spróbować jeszcze raz"
+					
+					startMesseage.innerHTML= ""
+					resultGame.innerHTML = endMesseage.fontcolor("red")
+
+					counterClicks=0
+					
+					endGame()
+				}
+		}
+
+		function endGame(){
+				
+			textArea.disabled = true
+			checkButton.disabled = true
+			generateButton.disabled = false
+		}
+
+	</script>	
+	
+	</body>
+</html>	
