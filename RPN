@@ -1,0 +1,48 @@
+ <html>
+ <head>
+ </head>
+ <body>
+ <script>
+ console.log("hi")
+     console.log(count("2+3-3"));
+
+ let sign
+    let result
+
+    function count(mathOperation){
+
+        const array = mathOperation.split(" ")
+        array.forEach(parse)
+        return result
+        console.log(result)
+    
+    }
+
+    const stack = []
+
+    function parse(element){
+
+        if (element == +element){
+            stack.push(+element)
+            if(stack.length > 1){rpn()}
+        }else{ 
+             sign = element
+            }
+
+    function rpn(){
+
+        const action ={
+            '+': (number1,number2) => number1 + number2,
+            '-': (number1,number2) => number1 - number2
+        }
+
+        const number1 = stack.shift()
+        const number2 = stack.shift()
+        result = action[sign](number1,number2)
+        stack.push(result)
+
+    }
+}
+<script>
+</body>
+</html>
