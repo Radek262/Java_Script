@@ -1,0 +1,91 @@
+html{
+	background-size: cover;
+	color:white;
+}
+div{
+	text-align: center;
+	justify-content: center;
+}
+body{
+	background: url(space.jpg);
+	-webkit-background-size:cover;
+	-moz-background-size:cover;
+	-o-background-size:cober;
+}
+
+.leftBar{
+	background-color: black;
+	float:left;
+	width: 50%;
+}
+.rightBar{
+	width: 100%;
+	display: flex;
+	display: inline-block;
+	height: 30%;
+}
+.information{
+	background-color: #323232;
+	float:left;
+	width: 100%;
+}
+.greaterContainer{
+	background-color: #191919;
+	float:left;
+	width: 50%;
+	height: 130px;
+	display: none;
+}
+.lowerContainer{
+	background-color: #262626;
+	float:left;
+	width: 50%;
+	height: 130px;
+	display: none;
+}
+#textArea{
+	float:left;
+}
+#startMesseage{
+font-family: "Comic Sans MS";
+}
+
+button {
+	color:white;
+	background-color: grey;
+	font-weight: bold;
+	font-size: 150%
+}
+button:hover{
+	cursor: pointer;
+}
+.bubble{
+	position: relative;
+	display: inline-flex;
+	flex-wrap: wrap; 
+	padding: 15px;
+	border:2px solid white;
+	border-radius: 20px;
+	outline: 0;
+	color: white;
+	left: 90px;
+	background: black;
+	font-weight: bold;
+	font-family: "Comic Sans MS";
+	font-size:25px;
+}
+.bubble:after{
+content: ' ';
+position: absolute;
+display: flex;
+margin: 0 auto;
+left:0;
+right: 110px;
+bottom: -10px;
+width: 15px;
+height: 15px;
+background: black;
+border-right: 2px solid white;
+border-bottom: 2px solid white;
+transform: rotate(48deg);
+}
