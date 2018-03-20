@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<style>
+		#container{
+			width: 40px;
+			height: 40px;
+
+			 <!background-color: black;>
+		}
+	</style>
+		<meta charset="UTF-8"/>
+		<meta charset="ISO-8859"/>
+
+	</head>
+	<body>
+		<div id="container"></div>
+		<select id="colorPicker">
+			<option value="black">black</option>
+			<option value="blue">blue</option>
+			<option value="green">green</option>
+			<option value="yellow">yellow</option>
+		</select>
+		<button id='reset' /*onclick="window.location.reload()"//o ile tlo jest domyslnie czarne */ onclick="reset()">reset</button>
+		
+		<script>
+			(function(){
+
+				const colorpreview = document.querySelector('#container')
+				const picker = document.querySelector('#colorPicker')
+
+				picker.addEventListener("change",function(event){
+		
+						colorChange(this.value)
+				})
+
+			
+			function colorChange(color){
+				colorpreview.style.background = color
+				}
+			})()
+
+			const colorpreview = document.querySelector('#container')
+			function reset(){
+				colorpreview.style.background = "black"
+			}
+
+
+		</script>	
+	</body>
+</html>	
